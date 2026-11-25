@@ -1,0 +1,29 @@
+{
+  "name": "forest-breath-meditation",
+  "version": "1.0.0",
+  "private": true,
+  "description": "3-minute 4K cinematic breathing meditation video built with Remotion",
+  "scripts": {
+    "dev": "remotion studio",
+    "check": "node scripts/check-assets.mjs",
+    "still": "remotion still ForestBreath out/preview.png --frame=2700",
+    "render": "node scripts/check-assets.mjs && remotion render ForestBreath out/forest-breath-4k.mp4",
+    "render:preview": "remotion render ForestBreathPreview out/forest-breath-preview.mp4",
+    "typecheck": "tsc --noEmit",
+    "render:force": "remotion render ForestBreath out/forest-breath-4k.mp4",
+    "ambience": "python3 scripts/generate-ambience.py out/forest-ambience.wav && ffmpeg -y -i out/forest-ambience.wav -c:a aac -b:a 256k -movflags +faststart public/audio/forest-ambience.m4a"
+  },
+  "type": "module",
+  "dependencies": {
+    "@remotion/cli": "4.0.547",
+    "@remotion/media": "4.0.547",
+    "@remotion/transitions": "4.0.547",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "remotion": "4.0.547"
+  },
+  "devDependencies": {
+    "@types/react": "19.3.3",
+    "typescript": "7.0.2"
+  }
+}
