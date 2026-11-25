@@ -4,3 +4,4 @@ out/
 *.log
 # Raw generation takes (assemble into public/footage/scene-XX.mp4)
 footage-raw/
+preview/
